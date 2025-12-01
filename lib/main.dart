@@ -6,6 +6,8 @@ import 'package:islami_c16/ui/hadeth_details/screen/hadeth_details_screen.dart';
 import 'package:islami_c16/ui/home/screen/home_screen.dart';
 import 'package:islami_c16/ui/quran_details/screen/quran_details_screen.dart';
 
+import 'ui/onboarding_screen/screens/on_boarding_screen.dart';
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await PrefsManager.init();
@@ -35,9 +37,10 @@ class MyApp extends StatelessWidget {
       routes: {
         RoutesManager.homeRoute:(context) => HomeScreen(),
         RoutesManager.quranRoute:(context)=>QuranDetailsScreen(),
-        RoutesManager.hadethRoute:(context)=>HadethDetailsScreen()
+        RoutesManager.hadethRoute:(context)=>HadethDetailsScreen(),
+        RoutesManager.onboardingRoute:(context)=>OnBoardingScreen()
       },
-      initialRoute:RoutesManager.homeRoute ,
+      initialRoute:RoutesManager.onboardingRoute ,
     );
   }
 }
