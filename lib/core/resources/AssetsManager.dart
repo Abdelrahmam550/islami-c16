@@ -22,4 +22,7 @@ abstract class AssetsManager{
   static const String readquran = "assets/images/read_quran.png";
   static const String listenRadio = "assets/images/listen_radio.png";
   static const String bearish = "assets/images/bearish.png";
+  static const String sebhaBack = "assets/images/taj-mahal-agra-india 2.png";
+  static const String sebhaHead = "assets/images/sebha_head.png";
+  static const String sebhaBody = "assets/images/SebhaBody 1.png";
 }
