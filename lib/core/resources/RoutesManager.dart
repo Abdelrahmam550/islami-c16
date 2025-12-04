@@ -3,4 +3,5 @@ abstract final class RoutesManager{
   static const String quranRoute = "quran_details";
   static const String hadethRoute = "hadeth_details";
   static const String onboardingRoute = "on_boarding";
+  static const String splashRoute = "splash";
 }

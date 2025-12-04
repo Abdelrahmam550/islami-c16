@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c16/core/resources/AssetsManager.dart';
 import 'package:islami_c16/core/resources/ColorManager.dart';
+import 'package:islami_c16/main.dart';
 import 'package:islami_c16/ui/onboarding_screen/widgets/fifth_screen.dart';
 import 'package:islami_c16/ui/onboarding_screen/widgets/first_screen.dart';
 import 'package:islami_c16/ui/onboarding_screen/widgets/fourth_screen.dart';
 import 'package:islami_c16/ui/onboarding_screen/widgets/second_screen.dart';
 import 'package:islami_c16/ui/onboarding_screen/widgets/third_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -17,6 +19,8 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   final PageController _pageController = PageController();
   int index = 0;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -92,13 +96,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       )
                     : const SizedBox(),
                 TextButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (index < 4) {
                       _pageController.nextPage(
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
                       );
                     } else {
+                      SharedPreferences prefs = await SharedPreferences.getInstance();
+                      await prefs.setBool("finishedOnBoarding", true);
+
                       Navigator.of(context).pushReplacementNamed("home");
                     }
                   },
