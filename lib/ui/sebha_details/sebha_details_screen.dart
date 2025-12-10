@@ -35,6 +35,7 @@ class _SebhaDetailsScreenState extends State<SebhaDetailsScreen> {
           Positioned.fill(
             top: height * 0.09,
             child: Stack(
+              alignment: Alignment.center,
               children: [
                 GestureDetector(
                     onTap: _rotateSebha,
